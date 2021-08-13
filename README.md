@@ -1,8 +1,8 @@
 # Django boiler plate
 
-This is a ready to use django project. 
+## I am no longer maintaining this repository
 
-If you do not find something you want to know in this file or any issues, please let me know. My Email is harjotbarn99@gmail.com
+If you need any help, please let me know. My Email is harjotbarn99@gmail.com
 
 
 #### features

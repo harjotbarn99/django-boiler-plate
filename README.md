@@ -24,7 +24,7 @@ all of this with just a few commands
 - rename the project `python manage.py rename djBoilerplate theBestApp`  =>  `python manage.py rename <current name> <new name>`. 
 - `npm install` to install npm packages
 - `gulp build` to build static files
-- `python manage.py make migrations`
+- `python manage.py migrate`
 - `python manage.py makesuper` creates the superuser
 - `python manage.py runserver`
 

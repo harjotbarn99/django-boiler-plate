@@ -1,0 +1,6 @@
+App:
+  prod : false
+  secret_key : 'django-insecure-fhjg$b5@3%$_6viw@x^fca4=s!4xm+z5(#nh=*(8h^l*44t)un-modified for prod'
+  superuser_username : "admin"
+  superuser_password : "admin1233"
+  superuser_email : "admin@xyzdomain.com"

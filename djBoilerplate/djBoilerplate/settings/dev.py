@@ -1,25 +1,31 @@
 from .base import *
 
+print("\n********************************************************************************\n starting app in Development\n********************************************************************************\n")
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-fhjg$b5@3%$_6viw@x^fca4=s!4xm+z5(#nh=*(8h^l*44t)un'
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+
 ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 
-# secret key
-SECRET_KEY = '@c@3s2i-%b28!g_=0ke3vw-@$w6!v^9w_buxhsf)8huo8kj-gx'
+# Database
+# https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-
-# database
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
 # debug toolbar
 INSTALLED_APPS += [
     "debug_toolbar",
-    "mail_panel",
+    # "mail_panel",
 ]
 
 MIDDLEWARE += [
@@ -32,7 +38,7 @@ INTERNAL_IPS = [
 
 DEBUG_TOOLBAR_PANELS = [
     "debug_toolbar.panels.timer.TimerPanel",
-    "mail_panel.panels.MailToolbarPanel",
+    # "mail_panel.panels.MailToolbarPanel",
     "debug_toolbar.panels.settings.SettingsPanel",
     "debug_toolbar.panels.headers.HeadersPanel",
     "debug_toolbar.panels.request.RequestPanel",
@@ -46,24 +52,4 @@ DEBUG_TOOLBAR_PANELS = [
     "debug_toolbar.panels.profiling.ProfilingPanel",
     "debug_toolbar.panels.versions.VersionsPanel",
 ]
-
-
-def show_toolbar(request):
-    return True
-
-
-DEBUG_TOOLBAR_CONFIG = {
-    "INTERCEPT_REDIRECTS": False,
-    "SHOW_TOOLBAR_CALLBACK": show_toolbar,
-}
-
-
-#  there are 2 options to display sent emails, you should not use both of them
-
-#  1 django toolbar email the debug toolbar will display them
-# EMAIL_BACKEND = "mail_panel.backend.MailToolbarBackend"
-# MAIL_TOOLBAR_TTL = 86400  # no of days emails are stored - currently 1 Day
-
-
-# 2 email printed to console
-EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# 

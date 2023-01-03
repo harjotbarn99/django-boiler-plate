@@ -11,13 +11,13 @@ __pycache__
 db.sqlite3
 
 # User-uploaded files
-media
+# media
 
 # JavaScript dependencies
 node_modules
 
 # Built static files
-static/dist
+# static/dist
 
 # Python virtual environment
 venv
@@ -30,3 +30,5 @@ venv
 
 # my trial directyory
 trial
+
+# config.yaml

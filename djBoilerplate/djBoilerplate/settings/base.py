@@ -112,7 +112,7 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [Path.joinpath(
-    SRC_PATH, "static", "dist"), Path.joinpath(SRC_PATH, "static", "other")]
+    SRC_PATH, "static", "dist")]
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = Path.joinpath(SRC_PATH, "media")

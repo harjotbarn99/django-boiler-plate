@@ -16,5 +16,16 @@
   "bugs": {
     "url": "https://github.com/harjotbarn99/django-boiler-plate/issues"
   },
-  "homepage": "https://github.com/harjotbarn99/django-boiler-plate#readme"
+  "homepage": "https://github.com/harjotbarn99/django-boiler-plate#readme",
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-if": "^3.0.0",
+    "gulp-imagemin": "^8.0.0",
+    "gulp-sourcemaps": "^3.0.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.11"
+  }
 }

@@ -16,6 +16,7 @@ const PATHS = {
       images: path.join(_STATIC, 'src', 'img'),
       scripts: path.join(_STATIC, 'src', 'js'),
       styles: path.join(_STATIC, 'src', 'scss'),
+      stylesCss: path.join(_STATIC, 'src', 'css'),
     },
     dist: {
       base: path.join(_STATIC, 'dist'),
@@ -37,10 +38,23 @@ function delete_dir(path){
       });
 }
 
+function css(prod = false){
+  // console.log("handling scss");
+  // delete_dir(PATHS.dist.styles)
+  return gulp
+  .src(path.join(PATHS.src.stylesCss, '**', '*.css'))
+  .pipe(gulpif(!prod,sourcemaps.init()))
+  .pipe(autoprefixer())
+  .pipe(gulpif(!prod,sourcemaps.write()))
+  .pipe(gulp.dest(PATHS.dist.styles))
+  .pipe(browserSync.stream());
+}
 
 function scss(prod = false){
     // console.log("handling scss");
+    // TODO : add check for same name css and scss files
     delete_dir(PATHS.dist.styles)
+    css();
     return gulp
     .src(path.join(PATHS.src.styles, '**', '*.scss'))
     .pipe(gulpif(!prod,sourcemaps.init()))
@@ -110,6 +124,10 @@ function watchChanges(){
   gulp
     .watch(path.join(PATHS.src.scripts, '**', '*'))
     .on('all', gulp.series(scripts, browserSync.reload));
+
+  gulp
+    .watch(path.join(PATHS.src.stylesCss, '**', '*'))
+    .on('all', gulp.series(scss, browserSync.reload));
 
   gulp
     .watch(path.join(PATHS.src.styles, '**', '*'))

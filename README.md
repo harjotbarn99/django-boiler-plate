@@ -1,6 +1,6 @@
 # Django boiler plate
 
-This repo is upto date with Django 4.1.5
+This repo is compatibele with Django 4.1.5
 
 for any bugs, issues or suggsetions contact me at harjotbarn99@gmail.com
 
@@ -11,7 +11,7 @@ for any bugs, issues or suggsetions contact me at harjotbarn99@gmail.com
 - can run in dev and production setting setup
 - has custom commad examples and
   - make super user with the custom command provided (no need to fill in username password and email)
-- has setup configuration variable
+- has setup configuration variables for security and smooth operation
 - has debug toobar 
 
 all of this with just a few commands
